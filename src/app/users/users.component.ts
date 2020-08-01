@@ -8,10 +8,11 @@ import { GituserDataService } from '../shared/gituser-data.service';
   styleUrls: ['./users.component.css']
 })
 export class UsersComponent implements OnInit {
-
-  data: Array<any>;
+ 
+  dataRepo: Array<any>;
+  data: Array<any>; 
   totalRecords: any;
-  page: any = 1; 
+  page: any = 1;   
 
   constructor(private _getDataService: GituserDataService) { 
     this.data = new Array<any>();
@@ -20,11 +21,15 @@ export class UsersComponent implements OnInit {
 
   ngOnInit() {
     this._getDataService.getData()
-    .subscribe((data)=> {
-      console.log(data);
+    .subscribe((data)=> { 
       this.data = data;
-      this.totalRecords = data.length;
+      this.totalRecords = data.length; 
+    });
+
+ 
+    this._getDataService.getRepo()
+    .subscribe((dataRepo)=> { 
+      this.dataRepo = dataRepo;  
     });
   }
-
 }

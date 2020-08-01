@@ -1,8 +1,36 @@
- 
-.card-title{
-    font-family: 'Lato', sans-serif;
-}
+
 .img-size{
     width: 100px;
     height: auto;
+}
+.page-layout{
+    margin: 15px 180px;
+}
+.custom-field{    
+    width: 300px;
+    height: 45px;
+}
+.footer {
+    position: relative;
+    padding: 15px 0;
+    left: 0;
+    bottom: 0;
+    width: 100%;
+    background-color: #2063ab;
+    color: white;
+    text-align: center;
+ }
+.card-container{
+    max-width: 750px; 
+    margin: 15px 180px;
+}
+.btn-outline-primary {
+    color: #01ADE5;
+    border-color: #01ADE5;
+}
+.btn-outline-primary:hover,
+.btn-outline-primary:not(:disabled):not(.disabled):active {
+    color: #fff;
+    background-color: #01ADE5;
+    border-color: #01ADE5;
 }

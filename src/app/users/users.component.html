@@ -1,9 +1,10 @@
+
 <section>
     <div class="container">
-        <div class="my-2">
-            <small class="text-dark"><strong>Total Result : 256 </strong></small>
+        <div class="card-container">
+            <small class="text-dark"><strong>Total Result : {{this.data.length}} </strong></small>
         </div>
-        <div style="max-width: 750px; margin: 15px 180px" *ngFor = "let user of data | paginate: { id: 'listing_pagination', itemsPerPage: 5, currentPage: page, totalItems: totalRecords }">
+        <div class="card-container" *ngFor = "let user of data | paginate: { id: 'listing_pagination', itemsPerPage: 5, currentPage: page, totalItems: totalRecords }">
             <div class="card mb-3">
                 <div class="row no-gutters">
                     <div class="col-md-2">
@@ -12,30 +13,32 @@
                     <div class="col-md-10">
                         <div class="card-body">
                             <h5 class="card-title">{{user.login}}</h5>
-                            <p class="card-text">Profile URL : {{user.html_url}}</p>
+                            <p class="card-text mb-0">Profile URL : {{user.html_url}}</p>
                             <small class="text-muted">Followers : {{user.followers_url}} </small><br>
                             <small class="text-muted">Repository : {{user.repos_url}} </small>
-                        <a type="button" class="btn btn-outline-primary float-right py-1 px-4" data-toggle="collapse" href="#collapse{{user.id}}" role="button" aria-expanded="false" aria-controls="collapse">
-                                Details
-                        </a>
+                            <a type="button" class="btn btn-outline-primary float-right py-1 px-4" data-toggle="collapse" href="#collapse{{user.id}}" role="button" aria-expanded="false" aria-controls="collapse">
+                                Datails
+                            </a>
                         </div>
-                    </div>
+                    </div>  
                 </div>
                 <div class="row">
                     <div class="col-md-12">                        
-                        <div class="collapse" id="collapse{{user.id}}"><hr>
+                        <div class="collapse" id="collapse{{user.id}}"><hr> 
                             <div class="table-responsive">
-                                <table class="table table-striped table-hover table-borderless text-center">
+                                <table class="table table-striped table-hover table-borderless">
                                     <thead>
-                                        <tr> 
-                                        <th scope="col">Repository Name</th>
-                                        <th scope="col">Repository develop by</th> 
+                                        <tr>  
+                                            <th scope="col">Repository ID</th>
+                                            <th scope="col">Repository Name</th>
+                                            <th scope="col">Watch Count</th> 
                                         </tr>
                                     </thead>
                                     <tbody>
-                                        <tr> 
-                                            <td>{{user.repos_url}}</td>
-                                            <td>Ambhore</td>
+                                        <tr *ngFor="let repo of dataRepo"> 
+                                            <td>{{repo.id}}</td>
+                                            <td>{{repo.name}}</td>
+                                            <td>{{repo.watchers_count}}</td>
                                         </tr> 
                                     </tbody>
                                 </table>
@@ -45,7 +48,12 @@
                 </div>
             </div>
         </div> 
-        <pagination-controls id="listing_pagination" maxSize="5" directionLinks="true" (pageChange)="page = $event" ></pagination-controls>
+        <div class="card-container text-center">
+            <pagination-controls id="listing_pagination" maxSize="5" directionLinks="true" (pageChange)="page = $event" ></pagination-controls>
+        </div>
+    </div>
+    <div class="footer">
+      <small>Made by Shubham</small>
     </div>
 </section>
       
