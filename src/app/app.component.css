@@ -1,4 +1,11 @@
-.img-size{
-    width: 75px;
-    height: auto;
+
+.page-layout{
+    margin: 15px 180px;
+}
+.bg-primary {
+    background-color: #2063ab!important;
+}
+.custom-field{    
+    width: 300px;
+    height: 45px;
 }

@@ -1,65 +1,14 @@
+
 <nav class="navbar navbar-dark bg-primary py-3">
-  <div class="container">
-    <form class="form-inline w-100 d-flex justify-content-center">
-      <select class="form-control mx-5" style="width: 300px;">
+  <div class="container justify-content-center"> 
+    <form class="form-inline">
+      <select class="form-control mr-5 custom-field"> 
         <option value="1">Sort By Name</option>
         <option value="2">Sort By Rank</option> 
       </select> 
-      <input class="form-control" type="search" style="width: 400px;" placeholder="Search..." aria-label="Search"> 
-    </form>
+      <input class="form-control custom-field" type="search" style="width: 400px;" placeholder="Search..." aria-label="Search"> 
+    </form> 
   </div>
 </nav>
-
-<section class="bg-light">
-  <div class="container">
-    <div style="max-width: 750px; margin: 15px 180px">
-      <div class="my-2">
-        <small class="text-dark"><strong>Total Result : 256 </strong></small>
-      </div>
-      <div class="card mb-3">
-        <div class="row no-gutters">
-          <div class="col-md-2">
-            <img src="../favicon.ico" class="card-img mt-3 ml-2 rounded-circle img-size" alt="...">
-          </div>
-          <div class="col-md-10">
-            <div class="card-body">
-              <h5 class="card-title">Varun</h5>
-              <p class="card-text">Profile URL :</p>
-              <small class="text-muted">Data One : </small><br>
-              <small class="text-muted">Data Two : </small>
-              <button type="button" class="btn btn-outline-primary float-right py-1 px-4" data-toggle="collapse" href="#collapseExample" role="button" aria-expanded="false" aria-controls="collapseExample">
-                Details
-              </button>
-              <div class="collapse" id="collapseExample">
-                <div class="card card-body">
-                  Anim pariatur cliche reprehenderit, enim eiusmod high life accusamus terry richardson ad squid. Nihil anim keffiyeh helvetica, craft beer labore wes anderson cred nesciunt sapiente ea proident.
-                </div>
-              </div>
-            </div>
-          </div>
-        </div>
-      </div>
-    </div> 
-  </div>
-</section>
-
-
-
-
-
-
-
-
-
-
-
-
-
- 
-
-
-
-
-
-
+<app-users></app-users>
 <router-outlet></router-outlet>
