@@ -1,5 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 
+import { GituserDataService } from '../shared/gituser-data.service';
+
 @Component({
   selector: 'app-users',
   templateUrl: './users.component.html',
@@ -7,9 +9,22 @@ import { Component, OnInit } from '@angular/core';
 })
 export class UsersComponent implements OnInit {
 
-  constructor() { }
+  data: Array<any>;
+  totalRecords: any;
+  page: any = 1; 
 
-  ngOnInit(): void {
+  constructor(private _getDataService: GituserDataService) { 
+    this.data = new Array<any>();
+  }
+
+
+  ngOnInit() {
+    this._getDataService.getData()
+    .subscribe((data)=> {
+      console.log(data);
+      this.data = data;
+      this.totalRecords = data.length;
+    });
   }
 
 }
